@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banking System</title>
+    <link href="index.css" rel="stylesheet" />
+    <script type="text/javascript" src="transaction.js"></script>
+    <script type="text/javascript" src="transactionList.js"></script>
+
+    <script>
+    let newList = new TransactionList;
+    </script>
+
+
+</head>
+<body onload="hideForm()">
+    <div>
+        <label for="im">Initial Amount:</label>
+        <input type="number" id = "im" name="im" />
+    </div>
+    <div id="transactionList">
+        <h2>Transaction List</h2>
+
+        <article id="sampleTran" style="display: none;">
+            <p class="transVal">Value</p>
+           <button class="delTransaction">Delete</button>
+        </article>
+
+        
+    </div>
+
+    <button id="clickAddTran" onclick="showForm()">Add Transaction</button>
+
+
+        <article id="newTranForm">
+             <input type="radio" id="wd" name="type">
+             <label for="wd">Withdrawal</label>
+             <input type="radio" id="dp" name="type">
+             <label for="dp">Deposit</label>
+             
+             <input type="number" id="newTranVal" name="newTranVal">
+             <label for="newTranVal">Value</label>
+             
+             <button id="adtranbtn" onclick="newList.addTran()">Submit</button>
+        </article> 
+
+        
+    
+
+    <button id="calbtn" onclick="newList.calculate()">Calculate Transaction</button>
+
+    <h1 id="tt">Total Value: <span id="total"></span></h1>
+
+    <button onclick="newList.delAll()">Delete All Transactions</button>
+</body>
+</html>
